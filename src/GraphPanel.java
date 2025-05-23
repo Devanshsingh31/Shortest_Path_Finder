@@ -10,7 +10,7 @@ public class GraphPanel extends JPanel {
     private int animationIndex = 0;
     private javax.swing.Timer animationTimer;
 
-    private Graph graph;
+    private Graph graph;//cities stored
 
     public GraphPanel(Graph graph) {
         this.graph = graph;
@@ -19,7 +19,7 @@ public class GraphPanel extends JPanel {
     public void setAnimatedPath(List<String> path) {
         this.fullPath = path;
         this.animatedPath.clear();
-        this.repaint();
+        this.repaint();// trigger to redraw 
     }
 
     public void animatePath(List<String> path) {
@@ -67,13 +67,14 @@ public class GraphPanel extends JPanel {
             if (p != null) {
                 g2.setColor(Color.RED);
                 g2.fillOval(p.x - 10, p.y - 10, 20, 20);
+      
                 g2.setColor(Color.BLACK);
                 g2.drawString(blockedCity, p.x - 15, p.y - 15);
             }
         }
 
         // Highlight animated path
-        g2.setColor(Color.BLUE);
+        g2.setColor(Color.GREEN);
         for (int i = 0; i < animatedPath.size() - 1; i++) {
             Point p1 = graph.getCityCoordinates().get(animatedPath.get(i));
             Point p2 = graph.getCityCoordinates().get(animatedPath.get(i + 1));

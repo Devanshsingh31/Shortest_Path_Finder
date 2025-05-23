@@ -27,8 +27,8 @@ public class Graph {
         addEdge("Delhi", "Agra", 233);
         addEdge("Agra", "Kanpur", 280);
         addEdge("Kanpur", "Lucknow", 90);
-        addEdge("Lucknow", "Varanasi", 320);
-        addEdge("Varanasi", "Patna", 250);
+        addEdge("Lucknow", "Varanasi", 350);
+        addEdge("Varanasi", "Patna", 270);
         addEdge("Delhi", "Jaipur", 281);
         addEdge("Jaipur", "Udaipur", 393);
         addEdge("Udaipur", "Ahmedabad", 262);
@@ -38,7 +38,7 @@ public class Graph {
         addEdge("Hyderabad", "Bangalore", 570);
         addEdge("Bangalore", "Chennai", 350);
         addEdge("Chennai", "Kolkata", 1670);
-        addEdge("Kolkata", "Guwahati", 970);
+        addEdge("Kolkata", "Guwahati", 990);
         addEdge("Delhi", "Chandigarh", 243);
         addEdge("Chandigarh", "Amritsar", 229);
         addEdge("Amritsar", "Jammu", 217);
@@ -56,16 +56,17 @@ public class Graph {
         addEdge("Mangalore", "Kochi", 420);
         addEdge("Kochi", "Thiruvananthapuram", 200);
         addEdge("Chennai", "Madurai", 460);
-        addEdge("Madurai", "Thiruvananthapuram", 260);
+        addEdge("Madurai", "Thiruvananthapuram", 290);
+        addEdge("Chennai", "Thiruvananthapuram", 700); // Direct connection with lower weight
     }
 
     public void initializeCoordinates() {
         cityCoordinates.put("Delhi", new Point(150, 150));
         cityCoordinates.put("Agra", new Point(200, 200));
         cityCoordinates.put("Kanpur", new Point(250, 250));
-        cityCoordinates.put("Lucknow", new Point(300, 250));
+        cityCoordinates.put("Lucknow", new Point(300, 270));
         cityCoordinates.put("Varanasi", new Point(350, 300));
-        cityCoordinates.put("Patna", new Point(400, 300));
+        cityCoordinates.put("Patna", new Point(400, 350));
         cityCoordinates.put("Jaipur", new Point(150, 250));
         cityCoordinates.put("Udaipur", new Point(150, 350));
         cityCoordinates.put("Ahmedabad", new Point(150, 450));
@@ -74,7 +75,7 @@ public class Graph {
         cityCoordinates.put("Hyderabad", new Point(250, 650));
         cityCoordinates.put("Bangalore", new Point(300, 700));
         cityCoordinates.put("Chennai", new Point(350, 750));
-        cityCoordinates.put("Kolkata", new Point(450, 350));
+        cityCoordinates.put("Kolkata", new Point(450, 370));
         cityCoordinates.put("Guwahati", new Point(550, 250));
         cityCoordinates.put("Chandigarh", new Point(190, 100));
         cityCoordinates.put("Amritsar", new Point(100, 100));
@@ -89,7 +90,7 @@ public class Graph {
         cityCoordinates.put("Mangalore", new Point(200, 700));
         cityCoordinates.put("Kochi", new Point(250, 750));
         cityCoordinates.put("Thiruvananthapuram", new Point(300, 800));
-        cityCoordinates.put("Madurai", new Point(350, 700));
+        cityCoordinates.put("Madurai", new Point(390, 700));
     }
 
     public List<String> findShortestPath(String start, String end) {
